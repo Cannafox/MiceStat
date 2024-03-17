@@ -4,3 +4,9 @@ MiceStat:
     MiceStatStatistics
     MiceStatIO
 
+MiceStatWindow - get window picture
+podawana do engine, - get statistics from picture
+dodaj do bazy danych w statisctis - add data
+
+Zdjecie -> Slownik z informacjami -> Jesli timestamp sie nie zgadza to aktualizacja bazy danych
+
