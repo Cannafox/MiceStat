@@ -1,9 +1,9 @@
-import MiceStat
+from MiceStat import MiceStat
 
 # WINDOW_TITLE =
 
 def main():
-    miceStat = MiceStat.MiceStat()
+    miceStat = MiceStat()
 
     # window = miceStat.initalize_window(WINDOW_TITLE)
 
