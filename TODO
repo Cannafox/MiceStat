@@ -1,5 +1,6 @@
 MiceStat:
     MiceStatWindow
+    MiceStatConfig
     MiceStatEngine
     MiceStatStatistics
     MiceStatIO
