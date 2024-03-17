@@ -1,0 +1,6 @@
+MiceStat:
+    MiceStatWindow
+    MiceStatEngine
+    MiceStatStatistics
+    MiceStatArchive
+
