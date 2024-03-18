@@ -4,3 +4,4 @@ pygetwindow
 pytesseract
 pillow
 pyyaml
+numpy

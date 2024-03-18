@@ -4,6 +4,7 @@ from MiceStat import MiceStat
 
 def main():
     miceStat = MiceStat()
+    miceStat.run()
 
 if __name__ == "__main__":
     main()
