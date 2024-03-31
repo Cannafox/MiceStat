@@ -1,15 +1,21 @@
 import numpy as np
 import pytesseract
 import cv2
+import os
+import sys
+
+parent_dir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+sys.path.append(parent_dir)
+from utils import LoggerFactory
 
 class MiceStatEngine:
-    def __init__(self, window):
-        self.init_summary()
+    logger_factory = LoggerFactory()
 
+    def __init__(self, window):
+        self.logger = self.logger_factory.create_logger(self)
         self.window = window
 
-    def init_summary(self):
-        print("Engine initialized.")
+        self.logger.info("Engine initialized")
 
     def load_frame(self, frame):
         self.last_frame = self._crop_to_game_size(frame)

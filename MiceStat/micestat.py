@@ -6,30 +6,34 @@ from MiceStat.config import MiceStatConfig
 from MiceStat.window import MiceStatWindow
 from MiceStat.engine import MiceStatEngine
 from MiceStat.statistics import MiceStatStatistics
+from MiceStat.utils import LoggerFactory
 
 class MiceStat:
+    logger_factory = LoggerFactory()
+
     def __init__(self):
+        self.logger = self.logger_factory.create_logger(self)
+
         self.config = MiceStatConfig()
         self.statistics = MiceStatStatistics()
         self.window = MiceStatWindow()
         self.engine = MiceStatEngine(self.window)
 
-        self.init_summary()
-
-    def init_summary(self):
-        print("MiceStat initialized.")
+        self.logger.info("MiceStat initialized.")
 
     def run(self):
-        test_data = [os.listdir('test_data')[0]]
-        for img in test_data:
-            test_path = os.path.join("test_data", img)
-            print(test_path)
+        self.logger.info("Run loop...")
+        self.window.update_regions()
+        # test_data = os.listdir('test_data')
+        # for img in test_data:
+            # test_path = os.path.join("test_data", img)
+            # print(test_path)
 
             # screen_screenshot = Image.open(test_path)
-            screen_screenshot = cv2.imread(test_path)
-            self.window.update_frame(screen_screenshot)
+            # screen_screenshot = cv2.imread(test_path)
+            # self.window.update_frame(screen_screenshot)
             # self.window.show_header()
-            print(pytesseract.image_to_string(self.window.get_header()))
+            # print(pytesseract.image_to_string(self.window.get_header()))
             # print(pytesseract.image_to_string(self.window.get_chat()))
             # print(pytesseract.image_to_string(self.window.get_leaderboard()))
 
