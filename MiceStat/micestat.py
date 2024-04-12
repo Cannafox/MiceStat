@@ -1,5 +1,5 @@
+import time
 import os
-import pytesseract
 import cv2
 from PIL import Image
 from MiceStat.config import MiceStatConfig
@@ -23,7 +23,14 @@ class MiceStat:
 
     def run(self):
         self.logger.info("Run loop...")
-        self.window.update_regions()
+        self.window.update()
+        self.window.show_frame()
+        self.window.show_chat()
+        self.window.show_header()
+        self.window.show_leaderboard()
+        # self.window.update_regions()
+        time.sleep(3)
+
         # test_data = os.listdir('test_data')
         # for img in test_data:
             # test_path = os.path.join("test_data", img)
